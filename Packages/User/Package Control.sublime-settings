@@ -1,0 +1,36 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Base16 Color Schemes",
+		"Better CoffeeScript",
+		"Boxy Theme Addon - Mono File Icons",
+		"BracketHighlighter",
+		"Chain of Command",
+		"Color Highlighter",
+		"ColorPicker",
+		"Emmet",
+		"ESLint",
+		"Git",
+		"GitGutter",
+		"Package Control",
+		"RuboCop",
+		"Sass",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"SublimeLinter-haml-lint",
+		"SublimeLinter-rubocop",
+		"Surround",
+		"Theme - Afterglow",
+		"Theme - Aristocat",
+		"Theme - Fladaptive",
+		"Theme - Spacegray",
+		"Vintage Surround",
+		"VintageLines",
+		"Xkcd"
+	]
+}

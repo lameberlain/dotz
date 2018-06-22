@@ -1,0 +1,20 @@
+{
+	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-oceanicnext.tmTheme",
+	"draw_indent_guides": false,
+	"draw_white_space": "all",
+	"font_face": "Fira Code",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"BracketHighlighter",
+		"ESLint",
+		"GitGutter",
+		"VintageLines"
+	],
+	"line_numbers": true,
+	"show_full_path": true,
+	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme",
+	"vintage_start_in_command_mode": true,
+	"word_wrap": true
+}
