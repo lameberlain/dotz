@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var args = process.argv.slice(2);
 
+var minNodeVersion = ["8","9","0"];
 var targetPath = args[0];
 var targetDir = path.dirname(targetPath);
 
@@ -12,16 +13,15 @@ if (nodeModulesPath) {
   module.paths.push(nodeModulesPath);
 }
 var configFile = args[2];
+var isNodeMinVersion = checkNodeMinVersion(process.version);
 
-var eslintPath = path.join(targetDir, 'node_modules', 'eslint');
-var eslint;
-if (fs.existsSync(eslintPath)) {
-  eslint = require(eslintPath);
-} else {
-  eslint = require('eslint');
-}
+var eslintPath = (isNodeMinVersion)
+  ? require.resolve('eslint', {paths: [targetDir, nodeModulesPath]})
+  : require.resolve('eslint');
 
+var eslint = require(eslintPath);
 var CLIEngine = eslint.CLIEngine;
+
 var options = {};
 if (configFile) {
   options.configFile = configFile;
@@ -86,4 +86,21 @@ function format(results) {
 
   lines.push('');
   return lines.join('\n');
+}
+
+
+function checkNodeMinVersion(version) {
+  var isNodeMinVersion = false;
+  var nodeVersion = (version + "").replace(/v/gi, "").split(".");
+
+  if(nodeVersion.length===3){
+    minNodeVersion.every(function(itm, idx) {
+      var isGreater = (nodeVersion[idx]*1 > itm*1)?true:false;
+      var isEqual = (itm*1 == nodeVersion[idx]*1)?true:false;
+
+      isNodeMinVersion = (isGreater || isEqual);
+      return (!isGreater && isEqual);
+    });
+  }
+  return isNodeMinVersion;
 }

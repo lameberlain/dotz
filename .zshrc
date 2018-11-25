@@ -1,16 +1,25 @@
+# TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/chamberlain/.oh-my-zsh
+function . {
+	if [[ $# -eq 0  ]]; then
+		builtin . ~/.zshrc
+	else
+		builtin . "$@"
+	fi
+}
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='Powerline'
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+ZSH_THEME="apple"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+# POWERLEVEL9K_MODE='Powerline'
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -64,6 +73,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 plugins=(
   git
   fast-syntax-highlighting
+	elixir
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -77,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -96,9 +106,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias q-up="cd /Users/chamberlain/Sites/verb/q && docker-compose up"
 alias bp-up="cd /Users/chamberlain/Sites/verb/bpb2/sources/Docker && docker-compose up"
-alias q="cd /Users/chamberlain/Sites/verb/q"
+# alias q="cd /Users/chamberlain/Sites/verb/q"
 alias bp="cd /Users/chamberlain/Sites/verb/bpb2"
 alias dc="docker-compose"
+q () {
+	cd "/Users/chamberlain/Sites/verb/q";
+}
+alias pip="pip3"
+alias lfs="git-lfs"
+alias ci="code"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+

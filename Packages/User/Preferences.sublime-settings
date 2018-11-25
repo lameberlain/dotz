@@ -1,15 +1,22 @@
 {
-	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-oceanicnext.tmTheme",
+	"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
+	"drag-text": false,
 	"draw_indent_guides": false,
 	"draw_white_space": "all",
 	"font_face": "Fira Code",
-	"font_size": 12,
+	"font_size": 14,
 	"ignored_packages":
 	[
+		"Base16 Color Schemes",
 		"BracketHighlighter",
 		"ESLint",
+		"Git",
+		"Git Formats",
 		"GitGutter",
-		"VintageLines"
+		"Origami",
+		"SublimeLinter",
+		"VintageLines",
+		"Xkcd"
 	],
 	"line_numbers": true,
 	"show_full_path": true,
