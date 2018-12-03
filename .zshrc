@@ -1,4 +1,4 @@
-# TERM="xterm-256color"
+TERM="xterm-256color-italic"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -11,6 +11,8 @@ function . {
 		builtin . "$@"
 	fi
 }
+alias ssh='TERM=xterm-256color ssh'
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -74,6 +76,7 @@ plugins=(
   git
   fast-syntax-highlighting
 	elixir
+	thefuck
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,3 +129,5 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
+
+eval $(thefuck --alias)

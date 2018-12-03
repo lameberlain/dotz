@@ -1,4 +1,5 @@
 syntax on
+set t_Co=256
 set number relativenumber
 set list
 set listchars=tab:→\ ,space:·,nbsp:•,trail:•
@@ -29,8 +30,11 @@ map <Space> <leader>
 nmap <silent> <leader>evrc :e $MYVIMRC<CR>
 nmap <silent> <leader>lvrc :so $MYVIMRC<CR>
 
+
 call plug#begin('~/.vim/plugged')
 	Plug 'christoomey/vim-sort-motion'
+	Plug 'nanotech/jellybeans.vim'
+	Plug 'w0ng/vim-hybrid'
 	Plug 'mattn/emmet-vim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'scrooloose/nerdtree'
@@ -66,16 +70,15 @@ nmap <silent> <leader>nf :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 3
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'hybrid'
 
-let g:airline_left_sep = "\ue0c0"
-let g:airline_right_sep = "\ue0c2"
+let g:airline_left_sep = ""
+let g:airline_right_sep = ""
 
-let g:airline_left_alt_sep = "\ue0c1"
-let g:airline_right_alt_sep = "\ue0c3"
+let g:airline_left_alt_sep = ""
+let g:airline_right_alt_sep = ""
 
 " set the CN (column number) symbol:
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
@@ -84,7 +87,6 @@ let g:jsx_ext_required = 0
 
 let g:vcoolor_custom_picker = '/Users/chamberlain/configs/Packages/ColorPicker/lib/osx_colorpicker'
 
-highlight LineNr ctermfg=darkgrey
 
 set statusline+=%{FugitiveStatusline()}
 set statusline+=%#warningmsg#
@@ -105,7 +107,6 @@ function! SyntasticCheckHook(errors)
 	endif
 endfunction
 
-hi Whitespace ctermfg=DarkGray
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
@@ -114,14 +115,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:NERDTreeDirArrowExpandable = "\uf07b"
 let g:NERDTreeDirArrowCollapsible = "\uf114"
 set fillchars+=vert:\ 
-hi ColorColumn ctermbg=0
-colo gruvbox
-highlight Normal ctermbg=NONE
+
+set background=dark
+colo hybrid
 set shiftwidth=2
-hi Visual ctermfg=white ctermbg=black
 
 set noexpandtab
-hi Folded ctermbg=none
 
 augroup InactiveWindows
 	autocmd!
@@ -130,8 +129,20 @@ augroup InactiveWindows
 	" autocmd WinLeave * set norelativenumber
 	autocmd WinLeave * set nocul
 augroup END
-let g:webdevicons_conceal_nerdtree_brackets = 1
 if exists('g:loaded_webdevicons')
 	call webdevicons#refresh()
 endif
 
+highlight LineNr ctermfg=darkgrey ctermbg=none
+
+hi Whitespace ctermfg=DarkGray ctermbg=none
+hi Visual ctermfg=white ctermbg=black
+hi ColorColumn ctermbg=0
+hi Comment cterm=italic ctermfg=darkgray ctermbg=NONE
+hi Folded ctermbg=NONE
+hi Normal ctermbg=NONE
+let g:webdevicons_conceal_nerdtree_brackets = 1
+
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
