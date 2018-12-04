@@ -33,12 +33,14 @@ nmap <silent> <leader>lvrc :so $MYVIMRC<CR>
 
 call plug#begin('~/.vim/plugged')
 	Plug 'christoomey/vim-sort-motion'
+	Plug 'terryma/vim-smooth-scroll'
 	Plug 'nanotech/jellybeans.vim'
 	Plug 'w0ng/vim-hybrid'
 	Plug 'mattn/emmet-vim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'scrooloose/nerdtree'
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'KabbAmine/vCoolor.vim'
 	Plug 'cakebaker/scss-syntax.vim'
@@ -61,6 +63,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'morhetz/gruvbox'
 call plug#end()
 
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 1)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 1)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 2)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 2)<CR>
 
 noremap <Leader>c ::et jursorline! <CR>
 map <C-S> :sp $MYVIMRC <CR>
@@ -93,6 +99,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -100,6 +107,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_html_checkers = []
+
+let g:syntastic_error_symbol = "\uf057"
+let g:syntastic_style_error_symbol = "\uf00d"
+let g:syntastic_warning_symbol = "\uf06a"
+let g:syntastic_style_warning_symbol = "\uf12a"
 
 function! SyntasticCheckHook(errors)
 	if !empty(a:errors)
@@ -112,8 +124,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeDirArrowExpandable = "\uf07b"
-let g:NERDTreeDirArrowCollapsible = "\uf114"
+let g:NERDTreeDirArrowExpandable = " \uf07b"
+let g:NERDTreeDirArrowCollapsible = " \uf114"
 set fillchars+=vert:\ 
 
 set background=dark
@@ -125,8 +137,8 @@ set noexpandtab
 augroup InactiveWindows
 	autocmd!
 	autocmd WinEnter * set cul
-	" autocmd WinEnter * set number relativenumber
-	" autocmd WinLeave * set norelativenumber
+	autocmd WinEnter * set number relativenumber
+	autocmd WinLeave * set norelativenumber
 	autocmd WinLeave * set nocul
 augroup END
 if exists('g:loaded_webdevicons')
@@ -139,8 +151,8 @@ hi Whitespace ctermfg=DarkGray ctermbg=none
 hi Visual ctermfg=white ctermbg=black
 hi ColorColumn ctermbg=0
 hi Comment cterm=italic ctermfg=darkgray ctermbg=NONE
-hi Folded ctermbg=NONE
-hi Normal ctermbg=NONE
+hi Folded ctermbg=NONE guibg=NONE
+hi Normal ctermbg=NONE guibg=NONE
 let g:webdevicons_conceal_nerdtree_brackets = 1
 
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
