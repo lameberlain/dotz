@@ -117,7 +117,6 @@ q () {
 }
 alias pip="pip3"
 alias lfs="git-lfs"
-alias ci="code"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -131,3 +130,7 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 
 eval $(thefuck --alias)
+
+export PATH="/Users/chamberlain/.rbenv/shims:${PATH}"
+export RBENV_SHELL=zsh
+
