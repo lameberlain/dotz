@@ -147,6 +147,10 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "\uf685"
     \ }
 
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gp :Gpush<CR>
+
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
