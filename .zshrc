@@ -1,3 +1,11 @@
+# oooooooooooo          oooo
+#'""""""d888'          `888
+#      .888P    .oooo.o  888 .oo.
+#     d888'    d88(  "8  888P"Y88b
+#   .888P      `"Y88b.   888   888
+#  d888'    .P o.  )88b  888   888
+#.8888888888P  8""888P' o888o o888o
+
 TERM="xterm-256color-italic"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH

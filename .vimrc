@@ -1,3 +1,11 @@
+"oooooo     oooo  o8o
+" `888.     .8'   `"'
+"  `888.   .8'   oooo  ooo. .oo.  .oo.
+"   `888. .8'    `888  `888P"Y88bP"Y88b
+"    `888.8'      888   888   888   888
+"     `888'       888   888   888   888
+"      `8'       o888o o888o o888o o888o
+
 syntax on
 set t_Co=256
 set number relativenumber
@@ -11,10 +19,18 @@ set cul
 set mouse=a
 set foldmethod=indent
 set foldlevel=20
+set nocompatible
+set backspace=2
+
+" copy and paste
+vmap <C-c> "+y
+vmap <C-x> "+d
+vmap <C-v> c<ESC>"+p
+nmap <leader>v "+p
 
 " inoremap <lt>/ </<C-x><C-o><Esc>==gi
 inoremap jk <esc>
-" window movement arrow keyz
+" window movement
 nnoremap <Down> <C-W><C-J>
 nnoremap <Up> <C-W><C-K>
 nnoremap <Right> <C-W><C-L>
@@ -30,9 +46,27 @@ map <Space> <leader>
 nmap <silent> <leader>evrc :e $MYVIMRC<CR>
 nmap <silent> <leader>lvrc :so $MYVIMRC<CR>
 
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nmap <leader><Tab> :tabnext<CR>
+nmap <leader><S-Tab> :tabprevious<CR>
+nmap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
 
 call plug#begin('~/.vim/plugged')
 	Plug 'christoomey/vim-sort-motion'
+	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-smooth-scroll'
 	Plug 'nanotech/jellybeans.vim'
 	Plug 'w0ng/vim-hybrid'
@@ -99,6 +133,20 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Git icons
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "\uf040",
+    \ "Staged"    : "\uf067",
+    \ "Untracked" : "\uf006",
+    \ "Renamed"   : "\uf061",
+    \ "Unmerged"  : "\uf6fc",
+    \ "Deleted"   : "\uf00d",
+    \ "Dirty"     : "\uf7a1 ",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "\uf685"
+    \ }
+
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -119,6 +167,7 @@ function! SyntasticCheckHook(errors)
 	endif
 endfunction
 
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
@@ -137,8 +186,8 @@ set noexpandtab
 augroup InactiveWindows
 	autocmd!
 	autocmd WinEnter * set cul
-	autocmd WinEnter * set number relativenumber
-	autocmd WinLeave * set norelativenumber
+	" autocmd WinEnter * set number relativenumber
+	" autocmd WinLeave * set norelativenumber
 	autocmd WinLeave * set nocul
 augroup END
 if exists('g:loaded_webdevicons')
@@ -158,3 +207,4 @@ let g:webdevicons_conceal_nerdtree_brackets = 1
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
+hi SignColumn ctermbg=NONE guibg=NONE
