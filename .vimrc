@@ -29,6 +29,8 @@ set foldlevel=20
 set nocompatible
 set backspace=2
 
+nnoremap <leader>big :r ! figlet -f roman
+
 " copy and paste
 vmap <C-c> "+y
 vmap <C-x> "+d
@@ -73,6 +75,7 @@ noremap <leader>0 :tablast<cr>
 
 call plug#begin('~/.vim/plugged')
 	Plug 'christoomey/vim-sort-motion'
+	Plug 'airblade/vim-gitgutter'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'terryma/vim-smooth-scroll'
 	Plug 'nanotech/jellybeans.vim'
@@ -154,6 +157,14 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "\uf685"
     \ }
 
+let g:gitgutter_sign_added = "\uf067"
+let g:gitgutter_sign_modified = "\uf040"
+let g:gitgutter_sign_removed = "\ufae7"
+let g:gitgutter_sign_removed_first_line = "\uf062"
+let g:gitgutter_sign_modified_removed = "\ufbca"
+
+autocmd BufWritePost * GitGutter
+
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gp :Gpush<CR>
@@ -197,9 +208,9 @@ set noexpandtab
 augroup InactiveWindows
 	autocmd!
 	autocmd WinEnter * set cul
-	" autocmd WinEnter * set number relativenumber
-	" autocmd WinLeave * set norelativenumber
 	autocmd WinLeave * set nocul
+	autocmd WinEnter * if @% != "NERD_tree_1" | set number relativenumber
+	autocmd WinLeave * if @% != "NERD_tree_1" | set norelativenumber
 augroup END
 if exists('g:loaded_webdevicons')
 	call webdevicons#refresh()
