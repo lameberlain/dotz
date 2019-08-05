@@ -8,6 +8,7 @@
 	clean = git-lfs clean -- %f
 [core]
 	excludesfile = /Users/chamberlain/.gitignore
+	pager = bat
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all

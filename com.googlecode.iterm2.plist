@@ -97045,6 +97045,8 @@
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>JobName</key>
+	<true/>
 	<key>LeftTabBarWidth</key>
 	<real>124.7890625</real>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -97109,11 +97111,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1949 564 606 469 1680 191 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>414 442 796 486 0 0 1680 1027 </string>
+	<string>1680 623 918 512 1680 191 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>377 279 592 584 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 191 1267 1417 1680 191 2560 1417 </string>
+	<string>32 0 847 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>175 0 670 612 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -97275,12 +97277,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.097707755863666534</real>
+				<real>0.1333121657371521</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.092142701148986816</real>
+				<real>0.13334330916404724</real>
 				<key>Red Component</key>
-				<real>0.086937598884105682</real>
+				<real>0.1333177387714386</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<true/>
@@ -97360,9 +97366,9 @@
 			<key>Cursor Type</key>
 			<integer>2</integer>
 			<key>Custom Command</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -97386,6 +97392,8 @@
 			<real>0.99531132341867457</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Text</key>
+			<string></string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -97701,7 +97709,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Chamberlain</string>
+			<string>🎸</string>
 			<key>Non Ascii Font</key>
 			<string>FuraCodeNerdFontCompleteM-Bold 14</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -97847,6 +97855,8 @@
 	<date>2018-10-01T15:05:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowBookmarkName</key>
+	<true/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -97869,6 +97879,8 @@
 	<real>1527631744</real>
 	<key>UseMetal</key>
 	<true/>
+	<key>WindowNumber</key>
+	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>

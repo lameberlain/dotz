@@ -7,6 +7,10 @@
 #.8888888888P  8""888P' o888o o888o
 
 TERM="xterm-256color-italic"
+
+# Vim mode
+bindkey -v
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -25,7 +29,7 @@ alias ssh='TERM=xterm-256color ssh'
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="mira_custom"
+ZSH_THEME="kardan"
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 # POWERLEVEL9K_MODE='Powerline'
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
@@ -115,16 +119,15 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias q-up="cd /Users/chamberlain/Sites/verb/q && docker-compose up"
-alias bp-up="cd /Users/chamberlain/Sites/verb/bpb2/sources/Docker && docker-compose up"
 # alias q="cd /Users/chamberlain/Sites/verb/q"
-alias bp="cd /Users/chamberlain/Sites/verb/bpb2"
+alias bp="cd /Users/chamberlain/Sites/verb/bpbetter"
 alias dc="docker-compose"
 q () {
 	cd "/Users/chamberlain/Sites/verb/q";
 }
 alias pip="pip3"
 alias lfs="git-lfs"
+alias nv="nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -142,3 +145,5 @@ eval $(thefuck --alias)
 export PATH="/Users/chamberlain/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 
+export PATH=$PATH:/Users/chamberlain/bin/slack-theme
+export SLACK_THEME_SHELL_PROFILE="/Users/chamberlain/.zshrc"
