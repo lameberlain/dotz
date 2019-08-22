@@ -88,10 +88,8 @@ Plug 'posva/vim-vue'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-sort-motion'
 Plug 'mileszs/ack.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
-Plug 'w0ng/vim-hybrid'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'KabbAmine/vCoolor.vim'
@@ -103,19 +101,25 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
+
+" pretty plugins
+Plug 'vim-airline/vim-airline'
+Plug 'w0ng/vim-hybrid'
+Plug 'morhetz/gruvbox'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 3
-" let g:airline_theme = 'hybrid'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_cowerline_fonts = 3
+let g:airline_theme = 'gruvbox'
 "
-" let g:airline_left_sep = ""
-" let g:airline_right_sep = ""
+let g:airline_left_sep = ""
+let g:airline_right_sep = ""
 "
-" let g:airline_left_alt_sep = ""
-" let g:airline_right_alt_sep = ""
+let g:airline_left_alt_sep = ""
+let g:airline_right_alt_sep = ""
 "
 " " set the CN (column number) symbol:
-" let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
+" " let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
 
 noremap <Leader>c ::et jursorline! <CR>
 map <C-S> :sp $MYVIMRC <CR>
@@ -169,7 +173,8 @@ autocmd StdinReadPre * let s:std_in=1
 set fillchars+=vert:\
 
 set background=dark
-colo hybrid
+let g:gruvbox_italic=1
+colo gruvbox
 set shiftwidth=2
 
 set noexpandtab

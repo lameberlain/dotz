@@ -17,23 +17,23 @@ bindkey -v
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/chamberlain/.oh-my-zsh
 function . {
-	if [[ $# -eq 0  ]]; then
-		builtin . ~/.zshrc
-	else
-		builtin . "$@"
-	fi
+if [[ $# -eq 0  ]]; then
+	builtin . ~/.zshrc
+else
+	builtin . "$@"
+fi
 }
 alias ssh='TERM=xterm-256color ssh'
 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="kardan"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-# POWERLEVEL9K_MODE='Powerline'
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+	# it'll load a random theme each time that oh-my-zsh is loaded.
+	# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+	ZSH_THEME="kardan"
+	# ZSH_THEME="powerlevel9k/powerlevel9k"
+	# POWERLEVEL9K_MODE='Powerline'
+	# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
+	# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -43,7 +43,7 @@ ZSH_THEME="kardan"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+	# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -65,17 +65,17 @@ ZSH_THEME="kardan"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+	# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+	# under VCS as dirty. This makes repository status check for large repositories
+		# much, much faster.
+		# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+	# stamp shown in the history command output.
+	# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+	# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -85,10 +85,11 @@ ZSH_THEME="kardan"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  fast-syntax-highlighting
-	elixir
-	thefuck
+git
+fast-syntax-highlighting
+elixir
+thefuck
+zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,11 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+	# if [[ -n $SSH_CONNECTION ]]; then
+		export EDITOR='vim'
+		# else
+			#   export EDITOR='mvim'
+			# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

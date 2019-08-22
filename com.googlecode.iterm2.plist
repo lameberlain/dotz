@@ -97111,11 +97111,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1949 564 606 469 1680 191 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1680 623 918 512 1680 191 2560 1417 </string>
+	<string>1680 1013 937 512 1680 191 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>377 279 592 584 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>32 0 847 1027 0 0 1680 1027 </string>
+	<string>1683 215 1274 1393 1680 191 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>175 0 670 612 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -97257,12 +97257,16 @@
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.13228283822536469</real>
+				<real>0.55573842005076135</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.12020024657249451</real>
+				<real>0.49941685387806356</real>
 				<key>Red Component</key>
-				<real>0.11482735723257065</real>
+				<real>0.47368869173300626</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -97763,7 +97767,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>screen-256color-italic</string>
+			<string>xterm-256color-italic</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
