@@ -29,7 +29,7 @@ alias ssh='TERM=xterm-256color ssh'
 # Set name of the theme to load. Optionally, if you set this to "random"
 	# it'll load a random theme each time that oh-my-zsh is loaded.
 	# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-	ZSH_THEME="kardan"
+	ZSH_THEME="powerlevel9k/powerlevel9k"
 	# ZSH_THEME="powerlevel9k/powerlevel9k"
 	# POWERLEVEL9K_MODE='Powerline'
 	# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 	# if [[ -n $SSH_CONNECTION ]]; then
-		export EDITOR='vim'
+		export EDITOR='nvim'
 		# else
 			#   export EDITOR='mvim'
 			# fi

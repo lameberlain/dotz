@@ -170,11 +170,10 @@ endfunction
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd StdinReadPre * let s:std_in=1
-set fillchars+=vert:\
 
 set background=dark
 let g:gruvbox_italic=1
-colo gruvbox
+colo hybrid
 set shiftwidth=2
 
 set noexpandtab
